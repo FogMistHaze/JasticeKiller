@@ -8,4 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/JK/Scenes/Title.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/JK/Scenes/Game.unity
+    guid: ebccc249260b2364e95f91d739d2d0a4
+  - enabled: 1
+    path: Assets/JK/Scenes/Clear.unity
+    guid: 47368269414586d408e13e7f75cab5a1
+  - enabled: 1
+    path: Assets/JK/Scenes/Gameover.unity
+    guid: 548df899f29a069469c4c9eb27e2e21c
   m_configObjects: {}

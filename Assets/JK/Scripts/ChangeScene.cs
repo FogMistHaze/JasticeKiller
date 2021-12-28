@@ -1,18 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
-    // Start is called before the first frame update
+    ToNextScene toNextScene;
+
     void Start()
     {
-        
+        toNextScene = GetComponent<ToNextScene>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKey(KeyCode.Space))
+        {
+            toNextScene.ChangeScene();
+        }
     }
 }

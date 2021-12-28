@@ -1,18 +1,35 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ToNextScene : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [Tooltip("切り替えたいシーン名"), SerializeField]
+    string nextScene = "";
+
+    bool sceneChanged;
+
+    public void ChangeScene()
     {
-        
+        if (sceneChanged) return;
+
+        sceneChanged = true;
+        //TinyAudio.PlaySE(TinyAudio.SE.Start);
+        SceneManager.LoadScene(nextScene);
     }
 
-    // Update is called once per frame
+    public void SetChangefalse()
+    {
+        sceneChanged = false;
+        Debug.Log("f");
+    }
+
     void Update()
     {
-        
+        if (Input.GetKey(KeyCode.Space))
+        {
+            ChangeScene();
+        }
     }
 }
