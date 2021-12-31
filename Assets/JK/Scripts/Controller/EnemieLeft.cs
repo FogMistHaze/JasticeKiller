@@ -5,10 +5,11 @@ using UnityEngine;
 public class EnemieLeft : MonoBehaviour
 {
     private Animator anim;
-    private const string Die = "Die";
+    private const string Die = "isDie";
     private const string ATK = "isAttack";
 
     public float speed = 0.1f;
+    public GameObject Ene;
 
     void Start()
     {
@@ -17,9 +18,15 @@ public class EnemieLeft : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.tag == "Sei")
+        if ((collision.collider.tag == "sei"))
         {
-            anim.SetBool("Die", true);
+            anim.SetBool(Die, true);
+            Destroy(Ene, 2);
+        }
+        if((collision.collider.tag == "Player"))
+        {
+            anim.SetBool(ATK, true);
+            Destroy(Ene, 1);
         }
     }
 }
