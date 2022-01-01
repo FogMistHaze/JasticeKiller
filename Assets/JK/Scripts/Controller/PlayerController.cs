@@ -1,20 +1,30 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField]
+    TextMeshProUGUI lifeText = default;
+    public static int life;
+
     private Vector3 pos;
     private Rigidbody rb;
     private Animator anim;
 
     private const string LA = "isLeftAttack";
     private const string RA = "isRightAttack";
-    private const string UA = "isUpAttack";
+    //private const string UA = "isUpAttack";
     private const string Dam = "isDamage";
 
-    public GameObject Sei, Gun;
+    public GameObject LSei, RSei;
     public float seispeed;
+
+    void Awake()
+    {
+        life = 10;
+    }
 
     void Start()
     {
@@ -22,37 +32,60 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    void FixedUpdate()
+    void Update()
     {
+        /*
         if (Input.GetKeyDown(KeyCode.W) ||Input.GetKeyDown(KeyCode.UpArrow))
         {
             anim.SetBool(UA, true);
-            Shot();
+            UpAttack();
         }
+        */
         if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
             anim.SetBool(LA, true);
-            Shot();
+            LAttack();
         }
         if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
             anim.SetBool(RA, true);
-            Shot();
+            RAttack();
         }
     }
 
-    void Shot()
+    void LAttack()
     {
-        GameObject obj = Instantiate(Sei, Gun.transform.position, Quaternion.identity);
-        Rigidbody Seirb = obj.GetComponent<Rigidbody>();
-        Seirb.AddForce(Gun.transform.forward * seispeed);
+        GameObject obj = Instantiate(LSei);
+        Rigidbody LSeirb = obj.GetComponent<Rigidbody>();
+        LSeirb.AddForce(Vector3.forward * seispeed);
     }
+
+    void RAttack()
+    {
+        GameObject obj = Instantiate(RSei);
+        Rigidbody RSeirb = obj.GetComponent<Rigidbody>();
+        RSeirb.AddForce(Vector3.forward * seispeed);
+    }   
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.CompareTag("Enemy"))
         {
             anim.SetBool(Dam, true);
+
+            life--;
+            //Debug.Log(life);
+
+            if (life <= 0)
+            {
+                GameManager.ToGameover();
+            }
+            UpdateLifeText();
         }
+    }
+
+    void UpdateLifeText()
+    {
+        lifeText.text = $"命 {life}";
     }
 }

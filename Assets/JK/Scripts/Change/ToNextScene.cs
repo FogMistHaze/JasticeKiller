@@ -27,7 +27,7 @@ public class ToNextScene : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             ChangeScene();
         }
