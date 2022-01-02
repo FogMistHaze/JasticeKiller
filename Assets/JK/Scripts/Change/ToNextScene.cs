@@ -15,7 +15,7 @@ public class ToNextScene : MonoBehaviour
         if (sceneChanged) return;
 
         sceneChanged = true;
-        //TinyAudio.PlaySE(TinyAudio.SE.Start);
+        TinyAudio.PlaySE(TinyAudio.SE.Space);
         SceneManager.LoadScene(nextScene);
     }
 

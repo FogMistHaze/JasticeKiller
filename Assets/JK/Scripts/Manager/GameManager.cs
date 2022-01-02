@@ -26,10 +26,11 @@ public class GameManager : MonoBehaviour
     {
         if (clear || gameover) return;
         clear = true;
-        SceneManager.LoadScene("Clear", LoadSceneMode.Additive);
-        Time.timeScale = 0;
 
-        //audio.volume = 0;
+        TinyAudio.PlaySE(TinyAudio.SE.Win);
+        SceneManager.LoadScene("Clear", LoadSceneMode.Additive);
+        
+        Time.timeScale = 0;
 
         //GetTime();
         //var timeScore = new System.TimeSpan(0, 0, min, sec, 0);
@@ -38,15 +39,15 @@ public class GameManager : MonoBehaviour
 
     public static void ToGameover()
     {
-        //audio.volume = 0;
         if (clear || gameover) return;
+
+        TinyAudio.PlaySE(TinyAudio.SE.Lose);
         SceneManager.LoadScene("Gameover", LoadSceneMode.Additive);
         Time.timeScale = 0;
     }
 
     void Start()
     {
-        //audio = GetComponent<AudioSource>();
         Time.timeScale = 1;
     }
 

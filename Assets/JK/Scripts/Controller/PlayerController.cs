@@ -43,12 +43,14 @@ public class PlayerController : MonoBehaviour
         */
         if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            anim.SetBool(LA, true);
+            TinyAudio.PlaySE(TinyAudio.SE.sei);
+            anim.SetBool(LA, true);            
             LAttack();
         }
         if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
-            anim.SetBool(RA, true);
+            TinyAudio.PlaySE(TinyAudio.SE.sei);
+            anim.SetBool(RA, true);          
             RAttack();
         }
     }
@@ -71,6 +73,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.collider.CompareTag("Enemy"))
         {
+            TinyAudio.PlaySE(TinyAudio.SE.Damage);
             anim.SetBool(Dam, true);
 
             life--;
