@@ -19,12 +19,13 @@ public class ToNextScene : MonoBehaviour
         SceneManager.LoadScene(nextScene);
     }
 
-    public void SetChangefalse()
+    public void SetChangeFalse()
     {
         sceneChanged = false;
         Debug.Log("f");
+        
     }
-
+    
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))

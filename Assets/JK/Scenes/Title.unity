@@ -675,8 +675,8 @@ GameObject:
   - component: {fileID: 1356371527}
   - component: {fileID: 1356371526}
   - component: {fileID: 1356371528}
-  - component: {fileID: 1356371529}
   - component: {fileID: 1356371530}
+  - component: {fileID: 1356371529}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -850,7 +850,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1237967094}
-        m_MethodName: SetChangefalse
+        m_MethodName: SetChangeFalse
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1032,6 +1032,11 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: e9a4724945c3289478c4a142ae87054b, type: 3}
+    - target: {fileID: 6169111155731467095, guid: 6879eaef83d16584b8a248a4d8f74527,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6879eaef83d16584b8a248a4d8f74527, type: 3}
 --- !u!1 &1790234545

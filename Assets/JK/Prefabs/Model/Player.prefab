@@ -572,7 +572,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c24bcb2fb403b141bc3fe4d9ebb7c0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeText: {fileID: 0}
+  lifeText: {fileID: 2572043035134547520, guid: c6d55157f3656d24591d7788585184ed,
+    type: 3}
   LSei: {fileID: 3919227841960790565, guid: d28fcb4794ff6b2469b5217ffd0c6dee, type: 3}
   RSei: {fileID: 5245962518442978824, guid: ce8477bb8aff57941b48f349f92bb548, type: 3}
   seispeed: 10
