@@ -5,32 +5,47 @@ using UnityEngine.SceneManagement;
 
 public class ToNextScene : MonoBehaviour
 {
-    [Tooltip("切り替えたいシーン名"), SerializeField]
+    [SerializeField]
     string nextScene = "";
 
     bool sceneChanged;
+
+    void Start()
+    {
+        //sceneChanged = false;
+    }
 
     public void ChangeScene()
     {
         if (sceneChanged) return;
 
-        sceneChanged = true;
         TinyAudio.PlaySE(TinyAudio.SE.Space);
-        SceneManager.LoadScene(nextScene);
+        SceneManager.LoadScene(nextScene);  
     }
-
+    
     public void SetChangeFalse()
     {
         sceneChanged = false;
         Debug.Log("f");
-        
-    }
-    
+    }  
+    /*
+    public void SetChangeTrue()
+    {
+        sceneChanged = true;
+        Debug.Log("t");
+    } 
+    */
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             ChangeScene();
         }
+        /*
+        if (sceneChanged == true)
+        {
+            
+        }
+        */
     }
 }

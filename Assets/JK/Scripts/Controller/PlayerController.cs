@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
     private const string RA = "isRightAttack";
     //private const string UA = "isUpAttack";
     private const string Dam = "isDamage";
+    private const string Win = "isWin";
+    private const string Lose = "isLose";
 
     public GameObject LSei, RSei;
     public float seispeed;
@@ -81,6 +83,7 @@ public class PlayerController : MonoBehaviour
 
             if (life <= 0)
             {
+                anim.SetBool(Lose, true);
                 GameManager.ToGameover();
             }
             UpdateLifeText();
