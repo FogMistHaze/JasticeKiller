@@ -8,7 +8,7 @@ public class ToNextScene : MonoBehaviour
     [SerializeField]
     string nextScene = "";
 
-    bool sceneChanged;
+    bool sceneChanged=true;
 
     void Start()
     {

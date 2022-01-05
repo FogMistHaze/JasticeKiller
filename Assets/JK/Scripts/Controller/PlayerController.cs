@@ -61,14 +61,14 @@ public class PlayerController : MonoBehaviour
     {
         GameObject obj = Instantiate(LSei);
         Rigidbody LSeirb = obj.GetComponent<Rigidbody>();
-        LSeirb.AddForce(Vector3.forward * seispeed);
+        LSeirb.velocity=(Vector3.left * seispeed);
     }
 
     void RAttack()
     {
         GameObject obj = Instantiate(RSei);
         Rigidbody RSeirb = obj.GetComponent<Rigidbody>();
-        RSeirb.AddForce(Vector3.forward * seispeed);
+        RSeirb.velocity=(Vector3.right * seispeed);
     }   
 
     private void OnCollisionEnter(Collision collision)

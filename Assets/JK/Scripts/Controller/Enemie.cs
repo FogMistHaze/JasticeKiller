@@ -19,11 +19,13 @@ public class Enemie : MonoBehaviour
     {
         if ((collision.collider.tag == "sei"))
         {
+            this.gameObject.tag = "atata";
             anim.SetBool(Die, true);
             Destroy(gameObject, 1.0f);
         }
         if((collision.collider.tag == "Player"))
         {
+            //this.gameObject.tag = "atata";
             anim.SetBool(ATK, true);
             Destroy(gameObject, 1.0f);
         }

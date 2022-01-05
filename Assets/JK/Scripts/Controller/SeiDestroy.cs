@@ -8,7 +8,7 @@ public class SeiDestroy : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.tag == "Enemy")
+        if ((collision.collider.tag == "Enemy") || (collision.collider.tag == "atata"))
         {
             //Instantiate(Sei, transform.position, Quaternion.identity);
             Destroy(gameObject);
