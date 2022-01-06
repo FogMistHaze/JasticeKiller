@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
         if (clear || gameover) return;
         clear = true;
 
-        anim.SetBool(Win, true);
+        //anim.SetBool(Win, true);
         TinyAudio.PlaySE(TinyAudio.SE.Win);
         SceneManager.LoadScene("Clear", LoadSceneMode.Additive);
         
