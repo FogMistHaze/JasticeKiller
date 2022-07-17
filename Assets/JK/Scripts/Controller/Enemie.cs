@@ -25,9 +25,14 @@ public class Enemie : MonoBehaviour
         }
         if((collision.collider.tag == "Player"))
         {
-            //this.gameObject.tag = "atata";
             anim.SetBool(ATK, true);
             Destroy(gameObject, 1.0f);
         }
     }
 }
+
+/*
+ 【偽正義のスクリプト】
+プレイヤーの攻撃seiに当たったら、isDieのアニメーションを行い、消える
+プレイヤーの近くに来たら、isAttackのアニメーションを行い、消える
+ */

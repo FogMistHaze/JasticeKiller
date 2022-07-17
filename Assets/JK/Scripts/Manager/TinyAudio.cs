@@ -31,3 +31,9 @@ public class TinyAudio : MonoBehaviour
         Instance.audioSource.PlayOneShot(Instance.seList[(int)se]);
     }
 }
+
+/*
+【音源管理スクリプト】
+SEのリストを作り、音源を入れる
+PlaySE()で特定のSEを再生する
+*/

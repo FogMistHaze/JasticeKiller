@@ -6,7 +6,6 @@ public class TimeEnemy : MonoBehaviour
 {
     public GameObject EnemyLeft;
     public GameObject EnemyRight;
-    //public GameObject EnemyUp;
 
     private const float LeftStart = 0.0f;
     private const float LeftInterval = 3.0f;
@@ -30,3 +29,10 @@ public class TimeEnemy : MonoBehaviour
         Instantiate(EnemyRight, new Vector3(20, 0, 0), Quaternion.identity);
     }
 }
+
+/*
+【偽正義の出現時間】
+左側から来るやつと右側から来るやつで間隔が違う
+
+※正直言ってここら辺はまだ理解しきれてない
+*/

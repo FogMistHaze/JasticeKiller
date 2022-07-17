@@ -17,3 +17,5 @@ public class Escape : MonoBehaviour
         }
     }
 }
+
+//Escapeキーを押すとゲーム終了する

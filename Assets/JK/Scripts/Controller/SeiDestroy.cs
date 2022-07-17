@@ -26,3 +26,10 @@ public class SeiDestroy : MonoBehaviour
         effect.transform.position = gameObject.transform.position;
     }
 }
+
+/*
+【プレイヤー(正義)の攻撃である「正」のスクリプト】
+敵に当たったら爆発(GenerateEffecr())して消える
+
+爆発は正を軸に行われる
+*/

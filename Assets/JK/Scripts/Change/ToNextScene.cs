@@ -10,11 +10,6 @@ public class ToNextScene : MonoBehaviour
 
     bool sceneChanged=true;
 
-    void Start()
-    {
-        //sceneChanged = false;
-    }
-
     public void ChangeScene()
     {
         if (sceneChanged) return;
@@ -26,26 +21,19 @@ public class ToNextScene : MonoBehaviour
     public void SetChangeFalse()
     {
         sceneChanged = false;
-        Debug.Log("f");
     }  
-    /*
-    public void SetChangeTrue()
-    {
-        sceneChanged = true;
-        Debug.Log("t");
-    } 
-    */
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             ChangeScene();
         }
-        /*
-        if (sceneChanged == true)
-        {
-            
-        }
-        */
     }
 }
+
+/*
+【シーン遷移プログラム】
+nextSceneに入れた名前のシーンに遷移する。SPACEキーでも遷移する
+アニメーションが完了するまで機能しない(sceneChangedがfalseになるまで)
+*/

@@ -15,7 +15,6 @@ public class PlayerController : MonoBehaviour
 
     private const string LA = "isLeftAttack";
     private const string RA = "isRightAttack";
-    //private const string UA = "isUpAttack";
     private const string Dam = "isDamage";
     private const string Win = "isWin";
     private const string Lose = "isLose";
@@ -36,13 +35,6 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        /*
-        if (Input.GetKeyDown(KeyCode.W) ||Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            anim.SetBool(UA, true);
-            UpAttack();
-        }
-        */
         if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
             TinyAudio.PlaySE(TinyAudio.SE.sei);
@@ -95,3 +87,12 @@ public class PlayerController : MonoBehaviour
         lifeText.text = $"命 {life}";
     }
 }
+/*
+ 【プレイヤー(正義)のスクリプト】
+Aと左矢印で左側に攻撃、Dと右矢印で右側に攻撃する
+攻撃は「正」という文字を重力の力で飛ばす
+
+Enemyに当たったら、isDamegeのアニメーションを行い、命が１削られる
+
+プレイヤーのHPは命として数字で表示される
+*/

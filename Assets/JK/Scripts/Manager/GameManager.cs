@@ -27,15 +27,10 @@ public class GameManager : MonoBehaviour
         if (clear || gameover) return;
         clear = true;
 
-        //anim.SetBool(Win, true);
         TinyAudio.PlaySE(TinyAudio.SE.Win);
         SceneManager.LoadScene("Clear", LoadSceneMode.Additive);
         
         Time.timeScale = 0;
-
-        //GetTime();
-        //var timeScore = new System.TimeSpan(0, 0, min, sec, 0);
-        //naichilab.RankingLoader.Instance.SendScoreAndShowRanking(timeScore);
     }
 
     public static void ToGameover()
@@ -68,3 +63,26 @@ public class GameManager : MonoBehaviour
         UpdateTimeText();
     }
 }
+
+/*
+【ゲーム中のスクリプト】
+全体管理
+
+初期化処理
+・時間
+・フラグ
+・ゲームの時を動かす
+
+クリアの処理
+・クリアフラグを立てる
+・クリアシーンに遷移
+・ゲームの時を止める
+
+ゲームオーバーの処理
+・ゲームオーバーフラグを立てる
+・ゲームオーバーシーンに遷移
+・ゲームの時を止める
+
+FixedUpdate()で時間カウント
+テキストに表示(UpdateTimeText())
+*/

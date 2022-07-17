@@ -14,3 +14,4 @@ public class AnimCall : MonoBehaviour
     }
 }
 
+//Animationのバーがマークのところに来たら実行するやつ
